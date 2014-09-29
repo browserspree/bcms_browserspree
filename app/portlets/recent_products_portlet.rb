@@ -6,7 +6,7 @@ class RecentProductsPortlet < Cms::Portlet
   enable_template_editor false
      
   def render
-    @products = Spree::Product.order("created_at desc")
+    @products = Spree::Product.order("created_at desc").limit(self.limit)
   end
     
 end
